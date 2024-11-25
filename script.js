@@ -114,7 +114,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const someFunc = (instance) => {
         if (instance) {
-            instance.on('slideChange', function (e) {
+            instance.lifespan('slideChange', function (e) {
                 
             });
         }
@@ -193,31 +193,31 @@ const brendsCardDbn = document.querySelector('.content__more_brends');
 
 mainTextDbn.addEventListener('click', function mainTextShow() {
     
-    if (mainTextDbn.innerHTML == "Читать далее")
+    if (mainTextDbn.classList.contains('content__more_text--show'))
     {
-        mainTextDbn.innerHTML = "Скрыть";
-        mainText.style.height = "auto";
-        mainTextDbn.classList.add("content__more_text--show")
+        mainTextDbn.textContent = "Скрыть";
+        mainText.classList.add("content__main-text--show")
+        mainTextDbn.classList.remove("content__more_text--show")
     }
     else {
-        mainTextDbn.innerHTML = "Читать далее";
-        mainText.style.height = "80px";
-        mainTextDbn.classList.remove("content__more_text--show")
+        mainTextDbn.textContent = "Читать далее";
+        mainText.classList.remove("content__main-text--show")
+        mainTextDbn.classList.add("content__more_text--show")
     }
 });
 
 brendsCardDbn.addEventListener('click', function brendsShow() {
     
-    if (brendsCardDbn.innerHTML == "Показать все")
+    if (brendsCardDbn.classList.contains('content__more_brends--show'))
     {
-        brendsCardDbn.innerHTML = "Скрыть";
-        brendsCard.style.height = "auto";
-        brendsCardDbn.classList.add("content__more_brends--show")
+        brendsCardDbn.textContent = "Скрыть";
+        brendsCard.classList.add("swiper__brend--show");
+        brendsCardDbn.classList.remove("content__more_brends--show")
     }
     else {
-        brendsCardDbn.innerHTML = "Показать все";
-        brendsCard.style.height = "80px";
-        brendsCardDbn.classList.remove("content__more_brends--show")
+        brendsCardDbn.textContent = "Показать все";
+        brendsCard.classList.remove("swiper__brend--show");
+        brendsCardDbn.classList.add("content__more_brends--show")
     }
 });
 

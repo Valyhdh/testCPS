@@ -538,6 +538,10 @@ body {
     overflow: hidden;
 }
 
+.content__main-text--show{
+    height: auto;
+}
+
 .swiper-img__brend {
     width: 240px;
     height: 72px;
@@ -737,10 +741,6 @@ body {
         width: auto;
     }
 
-    .swiper__brend {
-        height: 80px;
-    }
-
     .content__more_brends{
         margin: 10px 0px 0px 15px;
     }
@@ -758,6 +758,10 @@ body {
     .content__more_brends.content__more_brends--show::before{
         transform: rotate(-180deg);
         top: 1px;
+    }
+
+    .swiper__brend--show{
+        height: auto;
     }
     
     .footer__title {
